@@ -131,4 +131,4 @@ The v1.0.0 review passed **191 tests across 20 files**, type checking, lint, and
 
 ## License and credits
 
-Code is licensed under [MIT](./LICENSE). The host and public plugin APIs come from [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness). See [THIRD_PARTY_NOTICES](./THIRD_PARTY_NOTICES.md) for attribution. The banner was generated with imagegen from a user-provided character reference; see [image notes](./assets/README.md).
+Code is licensed under [MIT](./LICENSE). The host and public plugin APIs come from [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness). See [THIRD_PARTY_NOTICES](./THIRD_PARTY_NOTICES.md) for attribution.

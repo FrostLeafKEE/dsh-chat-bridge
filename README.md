@@ -131,4 +131,4 @@ v1.0.0 发布前检查：**20 个测试文件 / 191 个用例通过**，类型�
 
 ## 许可与致谢
 
-代码使用 [MIT](./LICENSE) 许可。宿主与公开插件接口来自 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)，第三方来源见 [THIRD_PARTY_NOTICES](./THIRD_PARTY_NOTICES.md)。介绍图由 imagegen 根据用户提供的角色参考生成，见 [图片说明](./assets/README.md)。
+代码使用 [MIT](./LICENSE) 许可。宿主与公开插件接口来自 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)，第三方来源见 [THIRD_PARTY_NOTICES](./THIRD_PARTY_NOTICES.md)。
