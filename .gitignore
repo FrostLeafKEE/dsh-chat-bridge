@@ -1,0 +1,11 @@
+node_modules/
+lib/
+dist/
+*.log
+.vitest/
+.cache/
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example

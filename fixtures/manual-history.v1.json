@@ -1,0 +1,51 @@
+{
+  "format": "dsh-chat-bridge.manual-history",
+  "schemaVersion": 1,
+  "title": "示例聊天：代码块、空白与表情",
+  "source": {
+    "url": "https://chat.deepseek.com/",
+    "conversationId": "fixture-conversation-0001"
+  },
+  "completeness": "user-supplied",
+  "messages": [
+    {
+      "id": "m1",
+      "role": "user",
+      "content": "请解释这个示例问题。\n第一行\r\n第二行（CRLF 保留）。",
+      "createdAt": "2026-01-02T03:04:05.000Z"
+    },
+    {
+      "id": "m2",
+      "role": "assistant",
+      "content": "这是原始回答。\n\n```python\nprint(\"空白与代码按原文保存\")\n```\n\n表情：🦀 中文标点：「引号」。",
+      "model": "fixture-model-label",
+      "attachments": [
+        {
+          "name": "diagram.png",
+          "mimeType": "image/png",
+          "sizeBytes": 20480,
+          "availability": "metadata-only"
+        },
+        {
+          "name": "missing.bin",
+          "availability": "unavailable"
+        }
+      ]
+    },
+    {
+      "id": "m3",
+      "role": "user",
+      "content": "  首尾空白必须保留  "
+    },
+    {
+      "id": "m4",
+      "role": "assistant",
+      "content": ""
+    },
+    {
+      "id": "m5",
+      "role": "user",
+      "content": "最后一条消息（必须保留）。✅"
+    }
+  ]
+}

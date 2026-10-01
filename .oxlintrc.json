@@ -1,0 +1,29 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "unicorn", "oxc"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error",
+    "perf": "warn"
+  },
+  "env": {
+    "browser": true,
+    "es2024": true
+  },
+  "ignorePatterns": ["lib/**", "dist/**", "node_modules/**"],
+  "rules": {
+    "no-console": "off",
+    "unicorn/prefer-node-protocol": "off",
+    // Assigning `request.onsuccess` / `transaction.oncomplete` is the canonical
+    // IndexedDB idiom: each request and transaction is created in exactly one
+    // place and owned by exactly one handler, so the multi-handler capability
+    // that addEventListener would add has no use here, while the event-handler
+    // properties keep the promise wrappers readable.
+    "unicorn/prefer-add-event-listener": "off",
+    // `import type {} from '...'` is the standard TypeScript way to pull in a
+    // module's `declare module` augmentation (the Context and SlotMap merges)
+    // without importing a runtime binding. It is erased at build time and
+    // creates no module-table request.
+    "unicorn/require-module-specifiers": "off"
+  }
+}

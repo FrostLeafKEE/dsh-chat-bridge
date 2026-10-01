@@ -1,0 +1,14 @@
+# Bundle patch contributed by the dsh-chat-bridge package.
+#
+# One root row, keyed by the *bare package name*: the Loader row id and the
+# `name` are both `dsh-chat-bridge`, which is what lets the client module
+# system attach this package's `./client` bundle to the row. Splitting the
+# package across several rows would keep the client half on whichever row
+# carries the bare name, so the basic stage contributes exactly one.
+#
+# The Host half (`lib/index.js`) registers the native-history Remote service;
+# the browser half (`lib/client.js`) mounts its descriptor and contributes the
+# chat panel plus the sidebar entry.
+- insert:
+    - id: dsh-chat-bridge
+      name: dsh-chat-bridge
