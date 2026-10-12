@@ -86,6 +86,7 @@ The Chat / Work control only navigates between surfaces. Your work session and i
 ## Current scope
 
 - **The sidebar reads loaded titles and links every three seconds.** Collapsed groups and unloaded entries may be missing; the count is the loaded count. List metadata is kept only for this run. Message contents are saved only on explicit import or transfer. Sign-out, loading failure, or unsupported markup clears the list with a notice.
+- **Source change, not yet released:** the sidebar chat section is capped at 30% of the viewport height; web conversations and imported history have separate 15% / 12% limits and scroll internally. Small-window, keyboard-focus and macOS layout acceptance is pending.
 
 - **Capture covers the currently rendered branch and is marked partial.** Unrendered messages in long conversations, other branches, and attachment contents are not automatically retrieved. Review the preview when completeness matters.
 - Capture supports a verified frontend build. Website changes, active generation, unsent drafts, or changing content stop the transfer with a notice.

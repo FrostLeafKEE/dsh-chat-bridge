@@ -398,3 +398,12 @@ interface ArchiveRepository {
 固定 scope loaded-sidebar；phase ready/loading/signed-out/sidebar-closed；items 为 url/title；pageUrl 为清除 query/hash 的同源地址；loadingMore 为布尔值。通过独立验证器检验所有字段、重复 URL、规范会话路径。限制 5000 个条目、1 MiB 元数据、单标题 1024 UTF-16 单位，超限拒绝。点击链接只导航；正文仍需显式采集/转换。显式 more=true 仅滚动已确认的网页历史容器，自动刷新不滚动、不点击、不读存储或私有接口。
 
 新增错误 WEB_HISTORY_UNSUPPORTED / WEB_HISTORY_LOAD_FAILED / WEB_HISTORY_TOO_LARGE / WEB_HISTORY_UNAVAILABLE，均闭合本地化且不带网页内容。固定前端解析基线、结构依据、分页与验证边界详见 WEB-HISTORY.md。191 用例的合成验证不能替代新侧栏实机验收。
+
+## 26. 待发布：侧栏聊天记录区限高
+
+- 仅修改 `src/client/styles/index.ts` 中插件自己的 `.dshcb-` 样式。`sidebar.footer.action` 注册、宿主项目列表及其他插件的页脚不变。
+- 整块 `.dshcb-sidebar-chat` 默认限高 `var(--dshcb-sidebar-max, 30vh)`，`box-sizing: border-box` 将边框和顶部内边距计入上限，`min-height: 0` 允许收缩；溢出使用自身纵向滚动，`overscroll-behavior: contain` 限制滚动链。
+- 通用档案列表默认限高 `var(--dshcb-sidebar-archives-max, 12vh)`。网页列表同时具备档案和网页类，使用组合选择器覆盖通用高度，独立限高 `var(--dshcb-sidebar-list-max, 15vh)`；不再被后置通用规则覆盖。
+- 这些上限限制本插件的页脚占用，不承诺任意窗口高度、其他页脚插件和宿主工具共同存在时，项目列表始终具有某个固定最小高度。两张列表和外层容器可以各自滚动；拖动分界线、整体折叠及持久化布局偏好不在本次改动中。
+- 无新脚本、订阅、计时器、依赖、数据格式、错误码或账号持久化行为。版本与诊断仍为 1.0.0，属于未发布源码改动；未应用附件中的登录快照补丁。
+- 小窗口、长列表、键盘焦点、浅深色与 macOS 的实际布局仍待实机验收，见 MANUAL-CHECKS.md 的 L3。

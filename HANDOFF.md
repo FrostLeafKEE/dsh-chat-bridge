@@ -44,3 +44,11 @@ Frontend script main.6fca03582d.js is the inspected website baseline. The sideba
 ## 10. Next owner actions
 
 Follow docs/MANUAL-CHECKS.md for real Desktop acceptance. Maintain frontend selectors against official render code, preserving explicit unsupported states. See docs/NEXT-STEPS.md for priorities. Do not rewrite existing user work sessions or promote synthetic verification to full desktop compatibility.
+
+## 11. Unreleased sidebar height change — 2026-10-12
+
+Adopted the submitted sidebar cap idea in the source stylesheet: the entire chat section is limited to 30vh including border/padding, web conversations to 15vh and local archives to 12vh. All three limits have scoped CSS variables; overflowing content scrolls internally with contained scroll chaining. A combined web-list selector fixes the common archive rule overriding its height.
+
+This bounds the plugin's footer contribution without altering host layout. It adds no resize handle, collapse preference, account storage, runtime listeners or dependencies. The supplied login-copying patch was reviewed separately and was not adopted. Package version and published release remain 1.0.0.
+
+2026-10-12: `npm run build` passed declaration compilation and Host/Client bundling. No tests were added or run for this change; real Desktop small-window, long-list, keyboard-focus and macOS checks remain pending (MANUAL-CHECKS.md L3).

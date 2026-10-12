@@ -8,6 +8,22 @@ Sign in on the embedded official webpage and expand its sidebar. **Web conversat
 
 ## Boundaries
 
+### Sidebar height / 侧栏高度（当前源码，尚未发布）
+
+聊天记录区的整体高度默认不超过 `30vh`，包含其边框和顶部内边距，超出后在插件区内部滚动。网页列表默认最多 `15vh`，已导入历史列表默认最多 `12vh`；两张列表各自保留内部滚动，滚动链限制在插件容器内。仅限制插件自己的页脚区域，不调整宿主项目列表或其他插件。
+
+The chat section, including its border and top padding, is capped at `30vh`. Its web list is capped at `15vh` and its local archive list at `12vh`. Overflow scrolls within the plugin; scroll chaining is contained. These caps bound this plugin's footer contribution, rather than guarantee a particular project-list height when other host/footer content also occupies space.
+
+| CSS variable | Default | Scope |
+| --- | --- | --- |
+| `--dshcb-sidebar-max` | `30vh` | Entire plugin chat section |
+| `--dshcb-sidebar-list-max` | `15vh` | Loaded web conversations |
+| `--dshcb-sidebar-archives-max` | `12vh` | Local imported archives |
+
+The web list uses both archive and web-list classes. Its combined selector takes precedence over the common archive height, so the two list variables remain independent. No drag-resize control or new collapse preference is introduced. This source change still needs real Desktop layout checks; the published v1.0.0 package is unchanged.
+
+### Data scope
+
 - The list reflects the **loaded webpage sidebar**, not a full account export. Folded pinned groups or unloaded server-side entries may be missing. The number shown is the loaded entry count, not a claimed remote total.
 - Titles/links are memory-only and replace the previous snapshot. They are not accumulated, written to IndexedDB or merged with local archives.
 - While the guest is detached for Work, last-read links can remain marked paused. Reopening Chat clears/rechecks them. Navigation, login/loading states, unsupported structures and failures clear stale titles. This cannot certify account identity independently of the displayed website.
