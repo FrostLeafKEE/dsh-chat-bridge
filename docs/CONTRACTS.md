@@ -1,6 +1,6 @@
 # 数据与接口合同
 
-本文件描述 `dsh-chat-bridge` `1.0.0` 的现行及兼容历史合同：档案 schema、结果与错误码、限额、摘要规则、导出格式，以及 Port 的输入、结果与释放规则。第 14–24 节按版本记录演进；旧草稿语义只供兼容参考，现行原生历史导入以第 16–24 节为准，网页列表以第 25 节为准。它是**本插件自己定义的业务接口**说明，不是 DSH SDK 文档。手动档案继续使用 v1；网页采集使用新增 v2，见第 14 节。实机验证状态见 INTEGRATION.md。
+本文件描述 `dsh-chat-bridge` `1.0.1` 的现行及兼容历史合同：档案 schema、结果与错误码、限额、摘要规则、导出格式，以及 Port 的输入、结果与释放规则。第 14–24 节按版本记录演进；旧草稿语义只供兼容参考，现行原生历史导入以第 16–24 节为准，网页列表以第 25 节为准，侧栏限高见第 26 节。它是**本插件自己定义的业务接口**说明，不是 DSH SDK 文档。手动档案继续使用 v1；网页采集使用新增 v2，见第 14 节。实机验证状态见 INTEGRATION.md。
 
 对应代码：`src/shared/contracts.ts`、`src/shared/errors.ts`、`src/shared/limits.ts`、`src/import/*`、`src/storage/*`、`src/adapters/*`。
 
@@ -399,11 +399,11 @@ interface ArchiveRepository {
 
 新增错误 WEB_HISTORY_UNSUPPORTED / WEB_HISTORY_LOAD_FAILED / WEB_HISTORY_TOO_LARGE / WEB_HISTORY_UNAVAILABLE，均闭合本地化且不带网页内容。固定前端解析基线、结构依据、分页与验证边界详见 WEB-HISTORY.md。191 用例的合成验证不能替代新侧栏实机验收。
 
-## 26. 待发布：侧栏聊天记录区限高
+## 26. v1.0.1 侧栏聊天记录区限高
 
 - 仅修改 `src/client/styles/index.ts` 中插件自己的 `.dshcb-` 样式。`sidebar.footer.action` 注册、宿主项目列表及其他插件的页脚不变。
 - 整块 `.dshcb-sidebar-chat` 默认限高 `var(--dshcb-sidebar-max, 30vh)`，`box-sizing: border-box` 将边框和顶部内边距计入上限，`min-height: 0` 允许收缩；溢出使用自身纵向滚动，`overscroll-behavior: contain` 限制滚动链。
 - 通用档案列表默认限高 `var(--dshcb-sidebar-archives-max, 12vh)`。网页列表同时具备档案和网页类，使用组合选择器覆盖通用高度，独立限高 `var(--dshcb-sidebar-list-max, 15vh)`；不再被后置通用规则覆盖。
 - 这些上限限制本插件的页脚占用，不承诺任意窗口高度、其他页脚插件和宿主工具共同存在时，项目列表始终具有某个固定最小高度。两张列表和外层容器可以各自滚动；拖动分界线、整体折叠及持久化布局偏好不在本次改动中。
-- 无新脚本、订阅、计时器、依赖、数据格式、错误码或账号持久化行为。版本与诊断仍为 1.0.0，属于未发布源码改动；未应用附件中的登录快照补丁。
+- 无新脚本、订阅、计时器、依赖、数据格式、错误码或账号持久化行为。包版本、诊断构建号和中英 UI 标记统一为 1.0.1；诊断继续识别 1.0.0 与 alpha.5–12，旧构建号保留可用于版本不一致提示。未应用附件中的登录快照补丁。
 - 小窗口、长列表、键盘焦点、浅深色与 macOS 的实际布局仍待实机验收，见 MANUAL-CHECKS.md 的 L3。

@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/FrostLeafKEE/dsh-chat-bridge/releases/tag/v1.0.0">Download v1.0.0</a> ·
+  <a href="https://github.com/FrostLeafKEE/dsh-chat-bridge/releases/tag/v1.0.1">Download v1.0.1</a> ·
   <a href="#installation">Installation</a> ·
   <a href="./docs/COMPATIBILITY.md">Compatibility</a> ·
   <a href="./LICENSE">MIT License</a>
@@ -38,12 +38,12 @@ Web chat runs through the official website. Importing history creates a session 
 
 ## Installation
 
-Download a package from the [v1.0.0 release](https://github.com/FrostLeafKEE/dsh-chat-bridge/releases/tag/v1.0.0).
+Download a package from the [v1.0.1 release](https://github.com/FrostLeafKEE/dsh-chat-bridge/releases/tag/v1.0.1). This patch caps the sidebar chat section and scrolls overflowing content inside it.
 
 | Platform | File | Status |
 | --- | --- | --- |
-| Windows | `dsh-chat-bridge-1.0.0.tgz` | Work import was confirmed in earlier versions; the new web list still needs desktop validation. |
-| macOS Apple Silicon / Intel | `dsh-chat-bridge-1.0.0-macos.zip` | Source adaptation and packaging are complete; not tested on a Mac. |
+| Windows | `dsh-chat-bridge-1.0.1.tgz` | Work import was confirmed in earlier versions; the web list and height patch still need Desktop validation. |
+| macOS Apple Silicon / Intel | `dsh-chat-bridge-1.0.1-macos.zip` | Source adaptation and packaging are complete; not tested on a Mac. |
 
 ### Windows
 
@@ -51,11 +51,11 @@ Launch official DSH once to initialize it, then fully quit it, including the tra
 
 ```powershell
 $dsh = Join-Path $env:LOCALAPPDATA 'Programs\DeepSeek Harness\resources\runtime\cli\bin\dsh.cmd'
-$package = Join-Path $env:USERPROFILE 'Downloads\dsh-chat-bridge-1.0.0.tgz'
+$package = Join-Path $env:USERPROFILE 'Downloads\dsh-chat-bridge-1.0.1.tgz'
 & $dsh plugin --profile desktop add $package
 ```
 
-Adjust paths for a custom installation or download location, then reopen DSH. The same `add` command updates the plugin. Use the desktop application's bundled CLI to manage the `desktop` profile.
+Adjust paths for a custom installation or download location and confirm the package exists there, then reopen DSH. The same `add` command updates the plugin. Use the desktop application's bundled CLI to manage the `desktop` profile. The release includes `SHA256SUMS-1.0.1.txt`.
 
 ### macOS
 
@@ -86,7 +86,7 @@ The Chat / Work control only navigates between surfaces. Your work session and i
 ## Current scope
 
 - **The sidebar reads loaded titles and links every three seconds.** Collapsed groups and unloaded entries may be missing; the count is the loaded count. List metadata is kept only for this run. Message contents are saved only on explicit import or transfer. Sign-out, loading failure, or unsupported markup clears the list with a notice.
-- **Source change, not yet released:** the sidebar chat section is capped at 30% of the viewport height; web conversations and imported history have separate 15% / 12% limits and scroll internally. Small-window, keyboard-focus and macOS layout acceptance is pending.
+- **v1.0.1 sidebar height patch:** the chat section is capped at 30% of the viewport height; web conversations and imported history have separate 15% / 12% limits and scroll internally. Small-window, keyboard-focus and macOS layout acceptance is pending.
 
 - **Capture covers the currently rendered branch and is marked partial.** Unrendered messages in long conversations, other branches, and attachment contents are not automatically retrieved. Review the preview when completeness matters.
 - Capture supports a verified frontend build. Website changes, active generation, unsent drafts, or changing content stop the transfer with a notice.
@@ -128,7 +128,7 @@ python scripts/pack-macos.py
 
 Source, tests, fixtures, and packaging scripts are kept in the repository. Dependencies, `lib/`, caches, and `dist/` build artifacts are excluded from Git; downloadable packages live in GitHub Releases.
 
-The v1.0.0 review passed **191 tests across 20 files**, type checking, lint, and builds. Some tests use synthetic DOM and service doubles, so they do not replace Electron or macOS acceptance testing. See the [release review](./docs/RELEASE-1.0.0.md).
+See the [1.0.1 patch review](./docs/RELEASE-1.0.1.md) for build and package checks. No tests were added or run for this patch. The historical v1.0.0 review passed **191 tests across 20 files**, type checking, lint and builds; see the [1.0.0 review](./docs/RELEASE-1.0.0.md). Synthetic DOM, service doubles and package checks do not replace Electron or macOS acceptance testing.
 
 ## License and credits
 

@@ -69,7 +69,7 @@ export const en = {
 
   // Panel header.
   'panel.title': 'Chat area',
-  'panel.basicBadge': 'v1.0.0',
+  'panel.basicBadge': 'v1.0.1',
   'panel.basicNote': 'The sidebar mirrors loaded web conversation links. Local archives are separate; message history is saved only when you import or transfer it.',
 
   // Mode switch.

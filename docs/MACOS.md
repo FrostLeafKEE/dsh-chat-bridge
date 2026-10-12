@@ -1,13 +1,13 @@
 # macOS 安装与适配
 
-当前包：**dsh-chat-bridge 1.0.0**。目标宿主：官方 **DeepSeek Harness Desktop 0.2.0-rc.2**。插件为 JavaScript，同一个 tgz 用于 Apple Silicon（arm64）与 Intel（x64）；使用与你的 Mac 对应的官方 Desktop。
+当前包：**dsh-chat-bridge 1.0.1**。目标宿主：官方 **DeepSeek Harness Desktop 0.2.0-rc.2**。插件为 JavaScript，同一个 tgz 用于 Apple Silicon（arm64）与 Intel（x64）；使用与你的 Mac 对应的官方 Desktop。
 
 本版完成源码适配与分享包构建；尚未在 Mac 实机运行。用户已确认此前 Windows 版本能顺利转工作，这不表示 macOS、重启持久性或后续模型上下文已逐项验收。
 
 ## 1. 使用 Mac 分享包
 
 1. 先打开一次官方 DeepSeek Harness，完成初始化，再按 **⌘Q 完全退出**。点击红色关闭按钮只会隐藏窗口，后台仍运行。
-2. 解压 `dsh-chat-bridge-1.0.0-macos.zip`，保留里面的所有文件在同一个文件夹。
+2. 解压 `dsh-chat-bridge-1.0.1-macos.zip`，保留里面的所有文件在同一个文件夹。
 3. 在终端进入解压目录，运行：
 
 ```sh
@@ -24,7 +24,7 @@
 
 ```sh
 "/Applications/DeepSeek Harness.app/Contents/Resources/runtime/cli/bin/dsh" \
-  plugin --profile desktop add "$PWD/dsh-chat-bridge-1.0.0.tgz"
+  plugin --profile desktop add "$PWD/dsh-chat-bridge-1.0.1.tgz"
 ```
 
 安装后重新打开 Desktop，在侧栏进入“聊天区”。同一 `.tgz` 也可以直接使用上面的 CLI 命令安装；不需要安装助手。

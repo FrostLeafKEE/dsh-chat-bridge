@@ -9,6 +9,8 @@
 
 ## Next priorities
 
+The 1.0.1 patch adds independent sidebar section/list height caps and internal scrolling. Short-window layout and keyboard accessibility still require real Desktop acceptance.
+
 1. Real Desktop acceptance of the new history list: account/login changes, folded pinned groups, long paginated lists, reconnects and Windows theme/layout. Mac installation and traffic-light/fullscreen behavior also require a real Mac.
 2. Maintain official frontend DOM adapters when website builds change, with verified structure and explicit unsupported states.
 3. Evaluate complete current-branch DOM scanning with overlap/gap detection, cancellation and viewport restoration. Do not claim full remote history from a list count or scrolling alone.

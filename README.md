@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/FrostLeafKEE/dsh-chat-bridge/releases/tag/v1.0.0">下载 v1.0.0</a> ·
+  <a href="https://github.com/FrostLeafKEE/dsh-chat-bridge/releases/tag/v1.0.1">下载 v1.0.1</a> ·
   <a href="#安装">安装指南</a> ·
   <a href="./docs/COMPATIBILITY.md">兼容性</a> ·
   <a href="./LICENSE">MIT License</a>
@@ -38,12 +38,12 @@
 
 ## 安装
 
-从 [v1.0.0 Release](https://github.com/FrostLeafKEE/dsh-chat-bridge/releases/tag/v1.0.0) 下载适合你的包。
+从 [v1.0.1 Release](https://github.com/FrostLeafKEE/dsh-chat-bridge/releases/tag/v1.0.1) 下载适合你的包。本次为侧栏限高修复，超出部分在聊天记录区内部滚动。
 
 | 平台 | 下载文件 | 状态 |
 | --- | --- | --- |
-| Windows | `dsh-chat-bridge-1.0.0.tgz` | 此前用户已确认转工作可用；新增网页列表尚待桌面实测。 |
-| macOS Apple Silicon / Intel | `dsh-chat-bridge-1.0.0-macos.zip` | 已完成源码适配和打包，尚未实机验证。 |
+| Windows | `dsh-chat-bridge-1.0.1.tgz` | 此前用户已确认转工作可用；网页列表和本次限高仍待桌面实测。 |
+| macOS Apple Silicon / Intel | `dsh-chat-bridge-1.0.1-macos.zip` | 已完成源码适配和打包，尚未实机验证。 |
 
 ### Windows
 
@@ -51,11 +51,11 @@
 
 ```powershell
 $dsh = Join-Path $env:LOCALAPPDATA 'Programs\DeepSeek Harness\resources\runtime\cli\bin\dsh.cmd'
-$package = Join-Path $env:USERPROFILE 'Downloads\dsh-chat-bridge-1.0.0.tgz'
+$package = Join-Path $env:USERPROFILE 'Downloads\dsh-chat-bridge-1.0.1.tgz'
 & $dsh plugin --profile desktop add $package
 ```
 
-自定义安装位置或下载目录时，修改对应路径。安装后重新打开 DSH。升级同样使用 `add` 命令；请使用桌面应用自带 CLI 管理 `desktop` profile。
+自定义安装位置或下载目录时，修改对应路径，并确认文件已经下载到该位置。安装后重新打开 DSH。升级同样使用 `add` 命令；请使用桌面应用自带 CLI 管理 `desktop` profile。Release 同时提供 `SHA256SUMS-1.0.1.txt` 校验文件。
 
 ### macOS
 
@@ -86,7 +86,7 @@ $package = Join-Path $env:USERPROFILE 'Downloads\dsh-chat-bridge-1.0.0.tgz'
 ## 当前范围
 
 - **网页侧栏读取已加载标题和链接，每 3 秒刷新。** 折叠分组或尚未加载的记录可能缺失；计数是已加载条目数。列表仅在本次运行保留，消息正文仅在明确导入或转换时保存。网页加载失败、登出或结构不支持时会清空列表并提示。
-- **当前源码新增，尚未发布：** 侧栏聊天记录区默认最多占窗口高度的 30%，网页列表和已导入历史分别限高 15% / 12%，超出后内部滚动。小窗口、键盘焦点和 macOS 布局仍待实机确认。
+- **v1.0.1 侧栏限高：** 聊天记录区默认最多占窗口高度的 30%，网页列表和已导入历史分别限高 15% / 12%，超出后内部滚动。小窗口、键盘焦点和 macOS 布局仍待实机确认。
 
 - **采集当前已渲染分支，标记为 partial。** 长对话中尚未渲染的消息、其他分支及附件原文不会自动补全；转换前可预览核对。
 - 网页采集限定已核对的前端版本。网页升级、生成中、有未发送草稿或内容变化时，转换会停止并提示处理。
@@ -128,7 +128,7 @@ python scripts/pack-macos.py
 
 源码、测试、夹具和打包脚本保留在仓库中；`node_modules/`、`lib/`、缓存及 `dist/` 构建产物不提交。发布包从 GitHub Releases 下载。
 
-v1.0.0 发布前检查：**20 个测试文件 / 191 个用例通过**，类型检查、lint 和构建通过。测试包含合成 DOM 与服务替身，不能代替 Electron 或 macOS 实机验收。详见 [发布检查](./docs/RELEASE-1.0.0.md)。
+v1.0.1 的构建及安装包检查见 [补丁版检查记录](./docs/RELEASE-1.0.1.md)。本次未新增或运行测试。历史 v1.0.0 检查为 **20 个测试文件 / 191 个用例通过**，另含类型检查、lint 和构建；详见 [v1.0.0 检查记录](./docs/RELEASE-1.0.0.md)。合成 DOM、服务替身与包检查不能代替 Electron 或 macOS 实机验收。
 
 ## 许可与致谢
 

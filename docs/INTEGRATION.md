@@ -1,6 +1,6 @@
 # Integration overview
 
-Current release: **1.0.0**. Target: official Desktop **0.2.0-rc.2**.
+Current package: **1.0.1**. Target: official Desktop **0.2.0-rc.2**.
 
 ## Architecture
 
@@ -15,6 +15,8 @@ Native import checks the registry, constructs a closed import turn/step with quo
 `npm run verify` on 2026-10-02: **20 test files / 191 tests**, type checking, lint and builds passed. Tests include synthetic DOM and service doubles. Earlier Windows native-import usability was confirmed by the user.
 
 New website sidebar, final theme/layout, restart behavior and macOS installation were not inspected in a real Desktop during this release task. Follow [manual checks](MANUAL-CHECKS.md); do not infer these results from unit tests.
+
+The 1.0.1 package adds scoped sidebar height caps. Its build/package evidence and pending manual checks are recorded separately in [the patch release review](RELEASE-1.0.1.md); the 191-test result above is historical, not a new test run for 1.0.1.
 
 ## Independent build
 

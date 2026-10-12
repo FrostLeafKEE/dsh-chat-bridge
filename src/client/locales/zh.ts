@@ -68,7 +68,7 @@ export const zh: Record<DshChatBridgeLocaleKey, string> = {
 
   // 面板标题。
   'panel.title': '聊天区',
-  'panel.basicBadge': 'v1.0.0',
+  'panel.basicBadge': 'v1.0.1',
   'panel.basicNote': '侧栏显示网页已加载的会话链接；本地档案独立保存，仅导入或转换时保存消息历史。',
 
   // 模式切换。

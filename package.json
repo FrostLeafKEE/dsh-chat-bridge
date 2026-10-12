@@ -1,6 +1,6 @@
 {
   "name": "dsh-chat-bridge",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "DSH 桌面聊天区插件：官方网页聊天、历史采集、直接导入原生工作会话上下文",
   "license": "MIT",

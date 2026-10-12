@@ -1,4 +1,4 @@
-# dsh-chat-bridge 1.0.0 — handoff
+# dsh-chat-bridge 1.0.1 — handoff
 
 ## 1. Project identity
 
@@ -35,7 +35,7 @@ Public main and sidebar.footer.action slots. Native chrome additions use documen
 
 ## 8. Distribution
 
-Version is 1.0.0 throughout. npm run pack builds the portable .tgz; scripts/pack-macos.py creates a ZIP with the identical tarball and Bash installation helpers. private:true blocks accidental npm publication. Generated artifacts and caches are ignored. README.md and README.en.md provide clickable language badges and a concept illustration.
+Version is 1.0.1 throughout the package, diagnostics and bilingual UI badges. Diagnostics still recognize 1.0.0 and alpha.5–12 when forwarding earlier Host results. npm run pack builds the portable .tgz; scripts/pack-macos.py creates a ZIP with the identical tarball and Bash installation helpers. private:true blocks accidental npm publication. Generated artifacts and caches are ignored. README.md and README.en.md provide clickable language badges and a concept illustration. The release includes SHA256SUMS-1.0.1.txt.
 
 ## 9. Remaining limits
 
@@ -45,10 +45,10 @@ Frontend script main.6fca03582d.js is the inspected website baseline. The sideba
 
 Follow docs/MANUAL-CHECKS.md for real Desktop acceptance. Maintain frontend selectors against official render code, preserving explicit unsupported states. See docs/NEXT-STEPS.md for priorities. Do not rewrite existing user work sessions or promote synthetic verification to full desktop compatibility.
 
-## 11. Unreleased sidebar height change — 2026-10-12
+## 11. v1.0.1 sidebar height patch — 2026-10-12
 
 Adopted the submitted sidebar cap idea in the source stylesheet: the entire chat section is limited to 30vh including border/padding, web conversations to 15vh and local archives to 12vh. All three limits have scoped CSS variables; overflowing content scrolls internally with contained scroll chaining. A combined web-list selector fixes the common archive rule overriding its height.
 
-This bounds the plugin's footer contribution without altering host layout. It adds no resize handle, collapse preference, account storage, runtime listeners or dependencies. The supplied login-copying patch was reviewed separately and was not adopted. Package version and published release remain 1.0.0.
+This bounds the plugin's footer contribution without altering host layout. It adds no resize handle, collapse preference, account storage, runtime listeners or dependencies. The supplied login-copying patch was reviewed separately and was not adopted. Installation guides and distribution names now use 1.0.1; the prior 1.0.0 release remains a historical baseline.
 
-2026-10-12: `npm run build` passed declaration compilation and Host/Client bundling. No tests were added or run for this change; real Desktop small-window, long-list, keyboard-focus and macOS checks remain pending (MANUAL-CHECKS.md L3).
+2026-10-12: the sidebar source build passed declaration compilation and Host/Client bundling. Release preparation uses a fresh build and package audit, recorded in RELEASE-1.0.1.md. No tests were added or run for this change; real Desktop small-window, long-list, keyboard-focus and macOS checks remain pending (MANUAL-CHECKS.md L3).

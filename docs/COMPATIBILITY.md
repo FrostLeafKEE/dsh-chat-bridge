@@ -2,13 +2,14 @@
 
 | Component | Baseline / status |
 | --- | --- |
-| Plugin | 1.0.0 |
+| Plugin | 1.0.1 |
 | DeepSeek Harness Desktop | 0.2.0-rc.2 |
 | Referenced upstream commit | 639ed015397290b3745d163aafe02ffee4aa3f84 |
 | Node for development | ^22.19.0 or >=24.0.0 |
 | Official web frontend | main.6fca03582d.js |
 | Windows native import | Earlier versions confirmed usable by the user |
 | New webpage sidebar | Synthetic regression checks passed; real Desktop acceptance pending |
+| Sidebar height cap | 30vh section / 15vh web list / 12vh local archives; real Desktop layout acceptance pending |
 | macOS arm64 / x64 | Portable plugin and app-bundled CLI helpers; real Mac acceptance pending |
 
 The plugin has no architecture-specific runtime binaries. The Mac package contains the same tarball as Windows. Desktop theme tokens and Mac safe frame insets are read, not overwritten.

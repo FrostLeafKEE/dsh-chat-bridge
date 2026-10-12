@@ -2,7 +2,7 @@
 
 ## Project
 
-Independent plugin for official DeepSeek Harness Desktop 0.2.0-rc.2. Current release is 1.0.0. Source, synthetic tests and distribution helpers build independently of any adjacent Harness checkout. Read README, docs/CONTRACTS.md and HANDOFF.md before changing behavior.
+Independent plugin for official DeepSeek Harness Desktop 0.2.0-rc.2. Current package version is 1.0.1 (sidebar height patch). Source, synthetic tests and distribution helpers build independently of any adjacent Harness checkout. Read README, docs/CONTRACTS.md and HANDOFF.md before changing behavior.
 
 ## Boundaries
 

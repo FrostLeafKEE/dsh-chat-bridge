@@ -1,6 +1,6 @@
 # Desktop acceptance checklist
 
-Current version **1.0.0**, target Desktop **0.2.0-rc.2**. Automated checks passed 191 tests across 20 files, types, lint and builds on 2026-10-02. These are synthetic, not live Desktop acceptance.
+Current package **1.0.1**, target Desktop **0.2.0-rc.2**. The historical 1.0.0 automated checks passed 191 tests across 20 files, types, lint and builds on 2026-10-02. No tests were added or run for the 1.0.1 sidebar patch. These are synthetic, not live Desktop acceptance.
 
 Earlier Windows native import has user confirmation. The individual checks below are **not executed in this release task**; record platform, host/plugin version and observed results when executing them.
 
@@ -27,7 +27,7 @@ Earlier Windows native import has user confirmation. The individual checks below
 
 - L1: Chat/Work control stays in the same position on hero and existing work pages; sidebar wide/rail, search and local-archive details remain usable.
 - L2: Light/dark theme, English/Chinese, keyboard focus/Escape/Tab, narrow windows and long titles.
-- L3 (unreleased source change, pending): Populate both web conversations and imported archives, open the local archive details, and resize to a short window. Confirm the whole plugin chat section stays within 30vh including border/padding, web rows within 15vh and local archive rows within 12vh. Scroll each region and reach search, load-more, import/manage and the last rows with mouse and keyboard. Check the workspace area remains usable with other footer items present, wide/rail mode, and light/dark themes on Windows and macOS. Override each of the three CSS variables independently and confirm the web cap is not overridden by the common archive class.
+- L3 (1.0.1 sidebar patch, pending): Populate both web conversations and imported archives, open the local archive details, and resize to a short window. Confirm the whole plugin chat section stays within 30vh including border/padding, web rows within 15vh and local archive rows within 12vh. Scroll each region and reach search, load-more, import/manage and the last rows with mouse and keyboard. Check the workspace area remains usable with other footer items present, wide/rail mode, and light/dark themes on Windows and macOS. Override each of the three CSS variables independently and confirm the web cap is not overridden by the common archive class.
 - M1: Install/update/list/remove using the selected official Mac .app CLI; same tarball digest, no app-signature modifications.
 - M2: Mac window/fullscreen safe inset, traffic lights, Apple Silicon and Intel hosts, process quit/reopen.
 - U1: Disable/uninstall removes plugin UI and listeners while existing source archives/native sessions remain independently recoverable.

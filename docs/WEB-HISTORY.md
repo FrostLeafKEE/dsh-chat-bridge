@@ -8,7 +8,7 @@ Sign in on the embedded official webpage and expand its sidebar. **Web conversat
 
 ## Boundaries
 
-### Sidebar height / 侧栏高度（当前源码，尚未发布）
+### Sidebar height / 侧栏高度（v1.0.1）
 
 聊天记录区的整体高度默认不超过 `30vh`，包含其边框和顶部内边距，超出后在插件区内部滚动。网页列表默认最多 `15vh`，已导入历史列表默认最多 `12vh`；两张列表各自保留内部滚动，滚动链限制在插件容器内。仅限制插件自己的页脚区域，不调整宿主项目列表或其他插件。
 
@@ -20,7 +20,7 @@ The chat section, including its border and top padding, is capped at `30vh`. Its
 | `--dshcb-sidebar-list-max` | `15vh` | Loaded web conversations |
 | `--dshcb-sidebar-archives-max` | `12vh` | Local imported archives |
 
-The web list uses both archive and web-list classes. Its combined selector takes precedence over the common archive height, so the two list variables remain independent. No drag-resize control or new collapse preference is introduced. This source change still needs real Desktop layout checks; the published v1.0.0 package is unchanged.
+The web list uses both archive and web-list classes. Its combined selector takes precedence over the common archive height, so the two list variables remain independent. No drag-resize control or new collapse preference is introduced. The v1.0.1 height patch still needs real Desktop layout checks.
 
 ### Data scope
 

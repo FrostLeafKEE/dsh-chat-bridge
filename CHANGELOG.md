@@ -1,10 +1,11 @@
 # Changelog
 
-## Unreleased
+## 1.0.1 — 2026-10-12
 
 - Cap the sidebar chat section at 30vh, its web list at 15vh and local archives at 12vh, with internal scrolling and overridable CSS variables.
 - Fix the shared archive class overriding the web list height; keep the outer border and padding inside the section height limit.
-- Desktop layout acceptance for this source change is pending; the published package remains v1.0.0.
+- Updated package version, diagnostics, bilingual badges and installation guides; distribute a portable tarball, Mac sharing ZIP and SHA256 checksums.
+- Desktop small-window/keyboard layout and real Mac acceptance remain pending. This patch does not add persistent login.
 
 ## 1.0.0 — 2026-10-02
 

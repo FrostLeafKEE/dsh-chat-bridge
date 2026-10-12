@@ -2,8 +2,8 @@
 import type { Err, ErrorCode, Result } from './errors'
 import { errCode } from './errors'
 
-export const BRIDGE_BUILD = '1.0.0'
-const DIAGNOSTIC_BUILDS = ['0.2.0-alpha.5', '0.2.0-alpha.6', '0.2.0-alpha.7', '0.2.0-alpha.8', '0.2.0-alpha.9', '0.2.0-alpha.10', '0.2.0-alpha.11', '0.2.0-alpha.12', BRIDGE_BUILD] as const
+export const BRIDGE_BUILD = '1.0.1'
+const DIAGNOSTIC_BUILDS = ['0.2.0-alpha.5', '0.2.0-alpha.6', '0.2.0-alpha.7', '0.2.0-alpha.8', '0.2.0-alpha.9', '0.2.0-alpha.10', '0.2.0-alpha.11', '0.2.0-alpha.12', '1.0.0', BRIDGE_BUILD] as const
 export const IMPORT_STAGES = [
   'client.prepare', 'client.rpc', 'client.receipt', 'client.activate',
   'host.services', 'host.validate', 'host.workspace', 'host.inspect', 'host.preset',
